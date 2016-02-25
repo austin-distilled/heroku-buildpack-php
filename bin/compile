@@ -43,15 +43,15 @@ fi
 
 MCRYPT_URL="https://github.com/austin-distilled/heroku-buildpack-php/raw/master/lib/libmcrypt-""$MCRYPT_VERSION"".tar.gz"
 echo "-----> Bundling mcrypt from $MCRYPT_URL"
-curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
+curl -L --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 
 APACHE_URL="https://github.com/austin-distilled/heroku-buildpack-php/raw/master/lib/httpd-""$APACHE_VERSION"".tar.gz"
 echo "-----> Bundling Apache from $APACHE_URL"
-curl --silent --max-time 60 --location "$APACHE_URL" | tar xz
+curl -L --silent --max-time 60 --location "$APACHE_URL" | tar xz
 
 PHP_URL="https://github.com/austin-distilled/heroku-buildpack-php/raw/master/lib/php-""$PHP_VERSION"".tar.gz"
 echo "-----> Bundling PHP from $PHP_URL"
-curl --silent --max-time 60 --location "$PHP_URL" | tar xz
+curl -L --silent --max-time 60 --location "$PHP_URL" | tar xz
 
 # update config files
 cp $LP_DIR/conf/httpd.conf $APACHE_PATH/conf
