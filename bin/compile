@@ -41,7 +41,7 @@ if [ -f www/Procfile ]; then
   mv www/Procfile .
 fi
 
-MCRYPT_URL="https://github.com/austin-distilled/heroku-buildpack-php/raw/master/lib/mcrypt-""$MCRYPT_VERSION"".tar.gz"
+MCRYPT_URL="https://github.com/austin-distilled/heroku-buildpack-php/raw/master/lib/libmcrypt-""$MCRYPT_VERSION"".tar.gz"
 echo "-----> Bundling mcrypt from $MCRYPT_URL"
 curl --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 
