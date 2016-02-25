@@ -47,7 +47,8 @@ curl -L --silent --max-time 60 --location "$MCRYPT_URL" | tar xz
 
 APACHE_URL="https://raw.githubusercontent.com/austin-distilled/heroku-buildpack-php/master/lib/httpd-""$APACHE_VERSION"".tar.gz"
 echo "-----> Bundling Apache from $APACHE_URL"
-curl -L --silent --max-time 60 --location "$APACHE_URL" | tar xz
+# curl -L --silent --max-time 60 --location "$APACHE_URL" | tar xz
+curl https://archive.apache.org/dist/httpd/httpd-2.2.31.tar.gz | tar xz
 
 PHP_URL="https://raw.githubusercontent.com/austin-distilled/heroku-buildpack-php/master/lib/php-""$PHP_VERSION"".tar.gz"
 echo "-----> Bundling PHP from $PHP_URL"
